@@ -51,4 +51,8 @@ public:
             current = current->next;
         }
     }
+
+    bool listEmpty(){
+        return (START == NULL);
+    }
 };
