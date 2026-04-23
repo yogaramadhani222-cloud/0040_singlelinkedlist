@@ -109,3 +109,72 @@ public:
         }
     }
 };
+
+int main()
+{
+    LinkedList mhs;
+    int nim;
+    char ch;
+
+    do
+    {
+        cout << "\n menu" << endl;
+        cout << "1.menambah Data kedalam list" << endl;
+        cout << "2.menghapus Data dari dalam list" << endl;
+        cout << "3.menampilkan Data dalam list" << endl;
+        cout << "4.mencari data dalam list" << endl;
+        cout << "5.keluar" << endl;
+
+        cout << "\n masukkan pilihan 1-5:";
+        cin >> ch;
+        
+        switch (ch)
+        {
+        case '1':
+            mhs.addNode();
+            break;
+
+        case '2':
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong\n" << endl;
+                break;
+            }
+
+            cout << "\n masukkan nomor mahasiswa yang akan dihapus: ";
+            cin >> nim;
+
+            if (mhs.delNode(nim) == false)
+            {
+                cout << "\nData tidak ditemukan\n" << endl;
+            }
+            else
+            {
+                cout << "\nData dengan nomor mahasiswa " << nim << " berhasil dihapus\n" << endl;
+            }
+            break;
+
+        case '3':
+            mhs.traverse();
+            break;
+
+        case '4':
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong\n" << endl;
+                break;
+            }
+            
+            break;
+
+        case '5':
+            break;
+
+        default:
+            cout << "\n pilihan salah\n" << endl;
+        }
+
+    } while (ch != '5');
+
+    return 0;
+}
